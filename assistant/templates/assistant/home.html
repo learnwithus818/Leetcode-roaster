@@ -8,6 +8,13 @@
     <title>LeetCode Roaster</title>
 
     <link rel="stylesheet" href="{% static 'index.css' %}">
+    <script>
+        import { inject } from '@vercel/analytics';
+        inject();
+ 
+        // window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <!-- <script defer src="/_vercel/insights/script.js"></script> -->
 
 
     <style>
@@ -144,17 +151,17 @@
             <p>
                 {{response}}
             </p>
-            
+
         </div>
 
         <form class="form-data" action="home" method="POST">
             {% csrf_token %}
-    
+
             <textarea id="autoResizeTextarea" name="query" rows="1">LeetCode Username</textarea>
             <input type="submit" value="Get Roasted🚀" class="askbutton">
         </form>
-        
-        
+
+
     </center>
 
 
