@@ -1,1 +1,1 @@
-web: gunicorn 'assistantApp.wsgi'
+web: gunicorn assistantApp.wsgi
