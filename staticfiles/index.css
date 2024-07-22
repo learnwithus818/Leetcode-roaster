@@ -1,0 +1,82 @@
+*{
+    color: white;
+    background-color: rgb(38, 38, 38);
+}
+
+html {
+    border: 3px solid rgba(255, 255, 255, 0);
+    box-shadow: 10px 5px 10px  rgb(22,33,62);
+    margin: .5rem;
+    /* margin-right: 2rem; */
+    border-radius: 1.5rem;
+    padding: 1rem;
+    height: auto;
+}
+
+h1{
+    text-align: center;
+    color: inherit;
+}
+
+textarea{
+    width: 95%;
+    border: 0;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    font-family: cursive;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .5rem 1rem 0rem 1rem;
+    outline: none;
+    resize: none;
+    height: auto;
+    overflow-y: hidden;
+}
+
+.askbutton{
+    border: 1px solid rgb(9, 67, 227);
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color: white;
+    /* background-color: rgb(22,33,62); */
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: .5rem;
+}
+
+.query-container {
+    border: 2px solid rgb(0, 58, 219);
+    border-radius: 1rem;
+    margin: 1rem;
+    margin-top: 0;
+    padding: .5rem 1.5rem;
+    box-shadow: 5px 3px 5px  rgb(22,33,62);
+    height: 70vh;
+    overflow-y: scroll;
+}
+.query-container::-webkit-scrollbar{
+    display: none;
+}
+
+.query-container h2 {
+    color: inherit;
+    font-size: 1.5em;
+}
+
+.query-container p {
+    color: inherit;
+    margin: .25rem;
+    font-size: 1em;
+}
+
+.form-data{
+    border: 1px solid rgb(7, 62, 213);
+    border-radius: 0.5rem;
+    box-shadow: 10px 5px 15px  rgb(5, 44, 150);
+    padding-right: 1rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    /* background-color: white; */
+}
+

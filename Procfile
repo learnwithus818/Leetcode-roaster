@@ -1,1 +1,1 @@
-web: gunicorn assistantApp.wsgi --log-file -
+web: gunicorn 'assistantApp.wsgi'
