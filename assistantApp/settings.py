@@ -14,7 +14,9 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -25,8 +27,10 @@ SECRET_KEY = 'django-insecure-kf=o=my=09lde-4%%t$w)!c=j6a8i0py5#t_fxf=*k*)p=(g_#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "leetcoderoaster-production.up.railway.app"]
 
+
+CSRF_TRUSTED_ORIGINS = ['https://leetcoderoaster-production.up.railway.app']
 
 # Application definition
 
@@ -74,12 +78,30 @@ WSGI_APPLICATION = 'assistantApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+import os
+import dj_database_url
+from pathlib import Path
+
+# Load environment variables from a .env file if you're using one
+from dotenv import load_dotenv
+load_dotenv()
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Default to 'development' if ENVIRONMENT is not set
+ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
+POSTGRES_LOCALLY = os.getenv('POSTGRES_LOCALLY', 'False') == 'True'
+
+# Initialize DATABASES dictionary
+DATABASES = {}
+
+if ENVIRONMENT == 'production' or POSTGRES_LOCALLY:
+    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_URL'))
+
+
+# Print DATABASES configuration to debug
+print("DATABASES configuration:", DATABASES)
+
 
 
 # Password validation

@@ -14,11 +14,6 @@ def home(request):
         username = 'anonymous'
         output = results(stats)
         tosend = output
-        print()
-        print()
-        print(output)
-        print()
-        print()
         output = output.split('\n')
         output = [x for x in output if x != 2]
         data = userChatWithAI.objects.create(user=username, query=query, response=output)
