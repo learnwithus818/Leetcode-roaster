@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-kf=o=my=09lde-4%%t$w)!c=j6a8i0py5#t_fxf=*k*)p=(g_#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "leetcoderoaster-production.up.railway.app"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "leetcoderoaster-production.up.railway.app", '*']
 
 
 CSRF_TRUSTED_ORIGINS = ['https://leetcoderoaster-production.up.railway.app']
